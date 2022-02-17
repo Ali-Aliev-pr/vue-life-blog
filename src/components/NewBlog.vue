@@ -18,7 +18,7 @@
 <script>
 export default {
     name: 'newBlog',
-    props: ['posts', 'addBlog'],
+    props: ['posts'],
     data() {
         return {
             name: "",
@@ -29,12 +29,13 @@ export default {
     methods: {
         addPost() {
             let blog = {name: this.name, description: this.description, author: this.author, date: new Date()}
-            this.addBlog(blog)
-            console.log(blog)
+            // this.addBlog(blog)
+            this.$emit('addBlog', blog)
+            // console.log(blog)
             this.name = ""
             this.description = ""
             this.author = ""
-            console.log(this.posts.Target)
+            // console.log(this.posts)
         }
     }
 }

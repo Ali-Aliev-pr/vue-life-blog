@@ -2,7 +2,7 @@
   <div id="nav">
     <Header/>
     <div class="content">
-      <router-view :posts="posts" :addBlog="addNote"></router-view>
+      <router-view :posts="posts" @addBlog="addNote"></router-view>
     </div>
   </div>
 </template>
@@ -18,8 +18,8 @@ export default {
   data() {
     return {
       posts: [
-        {name: 'Ali'},
-        {name: 'Maxim'}
+        {id: 1, name: 'My first app', description: "It's was greate", author: "Alex"},
+        {id: 2,name: "My first day at work", description: "It's was easy", author: 'Maxim'}
       ]
     }
   },
